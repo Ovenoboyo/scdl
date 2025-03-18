@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="gopher" src="docs/media/pods.png"> 
+    <img alt="gopher" src="docs/media/pods.png">
 </p>
 <p align="center">
 Scdl is the fastest SoundCloud music downloading CLI tool. Scdl utilizes a go routine pool ensuring multiple thread safe and fast downloads from SoundCloud within seconds. There are extended features such as search (no URL needed) recursively downloading all songs from a given playlist and more!
@@ -35,16 +35,16 @@ brew install scdl
 
 ```bash
 # go get :)
-go get https://github.com/imthaghost/scdl
+go get https://github.com/Ovenoboyo/scdl/v2
 # change to project directory using your GOPATH
-cd $GOPATH/src/github.com/imthaghost/scdl/cmd/scdl
+cd $GOPATH/src/github.com/Ovenoboyo/scdl/v2/cmd/scdl
 # build and install application
 go install
 ```
 
 ### Binary
 
-[Download Here](https://github.com/imthaghost/scdl/releases)
+[Download Here](https://github.com/Ovenoboyo/scdl/v2/releases)
 
 ## Usage
 
@@ -56,7 +56,7 @@ go install
 ## Examples
 
 ### Base Command
-```bash 
+```bash
 # command + SounCloud URL
 scdl https://soundcloud.com/polo-g/polo-g-feat-juice-wrld-flex
 ```

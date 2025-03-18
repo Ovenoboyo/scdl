@@ -3,11 +3,12 @@ package soundcloud
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/antchfx/htmlquery"
-	"github.com/imthaghost/scdl/pkg/mp3"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/Ovenoboyo/scdl/v2/pkg/mp3"
+	"github.com/antchfx/htmlquery"
 )
 
 // Download queries the SoundCloud api and receives a m3u8 file, then binds the segments received into a .mp3 file

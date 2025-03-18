@@ -1,6 +1,6 @@
 package main
 
-import "github.com/imthaghost/scdl/cmd"
+import "github.com/Ovenoboyo/scdl/v2/cmd"
 
 func main() {
 	cmd.Execute()

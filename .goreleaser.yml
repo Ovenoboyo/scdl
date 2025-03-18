@@ -22,35 +22,35 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
-    name_template: '{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}'
+    name_template: "{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}"
     files:
       - README.md
 
 # Checksum configuration
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 
 # Snapshot configuration
 snapshot:
-  name_template: '{{ .Tag }}-next'
+  name_template: "{{ .Tag }}-next"
 
 # Changelog configuration
 changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-      - 'README'
-      - 'LICENSE'
-      - 'Merge pull request'
-      - 'Merge branch'
+      - "^docs:"
+      - "^test:"
+      - "README"
+      - "LICENSE"
+      - "Merge pull request"
+      - "Merge branch"
 
 # Homebrew configuration
 brews:
   - repository:
       owner: imthaghost
       name: homebrew-scdl
-    folder: Formula
+    # folder: Formula
     homepage: https://github.com/imthaghost/scdl
     description: "SoundCloud Music Downloader | Scdl is the fastest SoundCloud music downloading CLI tool. Scdl utilizes go routine pools which allows you to download any song from SoundCloud within seconds. There are extended features such as recursively downloading all songs from a given artist and grabbing song artwork."

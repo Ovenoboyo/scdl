@@ -12,12 +12,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Ovenoboyo/scdl/v2/pkg/decrypt"
+	"github.com/Ovenoboyo/scdl/v2/pkg/joiner"
+	"github.com/Ovenoboyo/scdl/v2/pkg/pool"
+	"github.com/Ovenoboyo/scdl/v2/pkg/zhttp"
 	"github.com/fatih/color"
 	"github.com/grafov/m3u8"
-	"github.com/imthaghost/scdl/pkg/decrypt"
-	"github.com/imthaghost/scdl/pkg/joiner"
-	"github.com/imthaghost/scdl/pkg/pool"
-	"github.com/imthaghost/scdl/pkg/zhttp"
 )
 
 var (
