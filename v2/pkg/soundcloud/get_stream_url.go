@@ -2,12 +2,20 @@ package soundcloud
 
 import (
 	"fmt"
-	"golang.org/x/net/html"
 	"strings"
+
+	"golang.org/x/net/html"
+)
+
+type StreamType string
+
+const (
+	StreamTypeProgressive StreamType = "progressive"
+	StreamTypeHLS         StreamType = "hls"
 )
 
 // ConstructStreamURL will construct a stream url from a SoundCloud song url
-func (s *Soundcloud) ConstructStreamURL(doc *html.Node) (string, error) {
+func (s *Soundcloud) ConstructStreamURL(doc *html.Node, t StreamType) (string, error) {
 
 	// get client id
 	clientID, err := s.GetClientID()
@@ -30,9 +38,9 @@ func (s *Soundcloud) ConstructStreamURL(doc *html.Node) (string, error) {
 	trackID, streamToken, err := getTrackInfo(hlsStreamURL)
 
 	// construct stream url
-	baseURL := "https://api-v2.soundcloud.com/media/soundcloud:tracks:%s/%s/stream/hls?client_id=%s&track_authorization=%s"
+	baseURL := "https://api-v2.soundcloud.com/media/soundcloud:tracks:%s/%s/stream/%s?client_id=%s&track_authorization=%s"
 
-	streamURL := fmt.Sprintf(baseURL, trackID, streamToken, clientID, trackAuth)
+	streamURL := fmt.Sprintf(baseURL, trackID, streamToken, t, clientID, trackAuth)
 
 	return streamURL, nil
 }

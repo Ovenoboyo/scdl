@@ -33,7 +33,7 @@ func (s *Soundcloud) Download(url string) {
 		log.Println(err)
 	}
 
-	streamURL, err := s.ConstructStreamURL(doc)
+	streamURL, err := s.ConstructStreamURL(doc, StreamTypeHLS)
 	if err != nil {
 		log.Println(err)
 	}
@@ -48,12 +48,14 @@ func (s *Soundcloud) Download(url string) {
 		log.Println(err)
 	}
 
+	println("Got stream url", streamURL)
 	// Get the response from the URL
 	streamResp, err := http.Get(streamURL)
 	if err != nil {
 		log.Println(err)
 		return
 	}
+
 	defer streamResp.Body.Close()
 
 	// Read the body of the response
